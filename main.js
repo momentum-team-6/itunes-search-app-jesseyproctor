@@ -26,25 +26,26 @@ function renderResults (data) {
     for (let object of data.results) {
         console.log(object)
         //this for loop takes objects returned out of array so they can be grabbed
+        renderSong (object)
     }
-    renderSongs (track)
+    
 }
 
 
-funtion renderSongs (track) {
-
-    bandImage.innerHTML = <img class='band photo' src='track.artworkUrl30'>
-    bandName.innerHTML = track.artistName
-    trackTitle.innerHTML = track.trackName
-    
-    const bandImage = document.createElement('li')
+function renderSong (track) {
+ 
+    const bandImage = document.createElement('div')
     songList.appendChild(bandImage)
 
-    const bandName = document.createElement('li')
+    const bandName = document.createElement('h3')
     songList.appendChild(bandName)
 
-    const trackTitle = document.createElement('li')
+    const trackTitle = document.createElement('p')
     songList.appendChild(trackTitle)
+
+    bandImage.innerHTML = `<img class='band photo' src=${track.artworkUrl30}>`
+    bandName.innerHTML = track.artistName
+    trackTitle.innerHTML = track.trackName
 }
 
 
