@@ -34,7 +34,7 @@ function renderResults (data) {
 
 function renderSong (track) {
  
-    const bandImage = document.createElement('div')
+    const bandImage = document.createElement('figure')
     songList.appendChild(bandImage)
 
     const bandName = document.createElement('h3')
@@ -43,10 +43,21 @@ function renderSong (track) {
     const trackTitle = document.createElement('p')
     songList.appendChild(trackTitle)
 
+    const trackSoundClip = document.createElement ('figure')
+    songList.appendChild(trackSoundClip)
+
     bandImage.innerHTML = `<img class='band photo' src=${track.artworkUrl30}>`
     bandName.innerHTML = track.artistName
     trackTitle.innerHTML = track.trackName
+    trackSoundClip.innerHTML = `<audio
+        controls
+        src=${track.previewUrl}>
+            Your browser does not support the
+            <code>audio</code> element.
+    </audio>`
+
 }
+
 
 
 
