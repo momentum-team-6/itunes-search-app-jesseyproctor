@@ -46,6 +46,7 @@ function renderSong (track) {
     songCard.appendChild(bandImage)
 
     const bandName = document.createElement('h3')
+    bandName.classList.add('band-name')
     songCard.appendChild(bandName)
 
     const trackTitle = document.createElement('p')
@@ -56,7 +57,7 @@ function renderSong (track) {
     songCard.appendChild(trackSoundClip) 
 
 
-    bandImage.innerHTML = `<img class='band photo' src=${track.artworkUrl30}>`
+    bandImage.innerHTML = `<img class='band photo' src=${track.artworkUrl100}>`
     bandName.innerHTML = track.artistName
     trackTitle.innerHTML = track.trackName
     trackSoundClip.innerHTML = `<audio
