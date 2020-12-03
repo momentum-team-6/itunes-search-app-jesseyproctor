@@ -2,6 +2,7 @@ const searchMusic = document.querySelector('#search-music')
 const musicInput = document.querySelector('#music-input')
 const songList = document.querySelector('#song-list')
 const baseUrl = 'https://itunes-api-proxy.glitch.me/search?term='
+const clearButton = document.querySelector('#clear-button')
 // const baseUrl = 'https://itunes.apple.com/search?term='
 // const searchString = encodeURI(musicInput.value)
 // const url = baseUrl + searchString
@@ -19,8 +20,14 @@ searchMusic.addEventListener('submit', function (event) {
         console.log(data)
         renderResults (data)
     })
+    
 })
 
+clearButton.addEventListener('click', function (event) {
+    console.log ("hello", event)
+    musicInput.value = ''
+    songList.innerHTML = ''
+})
 
 function renderResults (data) {
     for (let object of data.results) {
@@ -43,7 +50,7 @@ function renderSong (track) {
     const trackTitle = document.createElement('p')
     songList.appendChild(trackTitle)
 
-    const trackSoundClip = document.createElement ('figure')
+    const trackSoundClip = document.createElement('figure')
     songList.appendChild(trackSoundClip)
 
     bandImage.innerHTML = `<img class='band photo' src=${track.artworkUrl30}>`
