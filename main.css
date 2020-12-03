@@ -1,0 +1,43 @@
+.song-card {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.band-image {
+
+}
+
+body {
+    text-align: center; 
+}
+
+.track-title {
+    padding: 10px;
+}
+
+#music-input {
+    padding: 10px;
+    margin: 60px;
+    margin-bottom: 15px;
+    border-radius: 25px;
+}
+
+.search {
+    background-color: black;
+    color: white;
+    margin-bottom: 75px;
+}
+
+.clear {
+    background-color: white;
+    color: black;
+    margin-bottom: 75px;
+}
+
+
+.search:hover {
+    background-color: rgb(156, 18, 18);
+}
+.clear:hover {
+    background-color: rgb(198, 224, 236);
+}

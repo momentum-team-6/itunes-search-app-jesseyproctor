@@ -1,18 +1,15 @@
 const searchMusic = document.querySelector('#search-music')
 const musicInput = document.querySelector('#music-input')
-const songList = document.querySelector('#song-list')
+const songCard = document.querySelector('#song-card')
 const baseUrl = 'https://itunes-api-proxy.glitch.me/search?term='
 const clearButton = document.querySelector('#clear-button')
 // const baseUrl = 'https://itunes.apple.com/search?term='
-// const searchString = encodeURI(musicInput.value)
-// const url = baseUrl + searchString
 
 
 searchMusic.addEventListener('submit', function (event) {
     event.preventDefault()
     console.log('it worked')
     let searchString = musicInput.value.replace(' ', '+')
-    // encodeURI(musicInput.value)
     console.log(baseUrl + searchString)
     fetch (baseUrl + searchString)
     .then (response => response.json()) 
@@ -26,7 +23,7 @@ searchMusic.addEventListener('submit', function (event) {
 clearButton.addEventListener('click', function (event) {
     console.log ("hello", event)
     musicInput.value = ''
-    songList.innerHTML = ''
+    songCard.innerHTML = ''
 })
 
 function renderResults (data) {
@@ -42,16 +39,19 @@ function renderResults (data) {
 function renderSong (track) {
  
     const bandImage = document.createElement('figure')
-    songList.appendChild(bandImage)
+    bandImage.classList.add('band-image')
+    songCard.appendChild(bandImage)
 
     const bandName = document.createElement('h3')
-    songList.appendChild(bandName)
+    songCard.appendChild(bandName)
 
     const trackTitle = document.createElement('p')
-    songList.appendChild(trackTitle)
+    trackTitle.classList.add('track-title')
+    songCard.appendChild(trackTitle)
 
     const trackSoundClip = document.createElement('figure')
-    songList.appendChild(trackSoundClip)
+    songCard.appendChild(trackSoundClip)
+
 
     bandImage.innerHTML = `<img class='band photo' src=${track.artworkUrl30}>`
     bandName.innerHTML = track.artistName
