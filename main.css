@@ -1,20 +1,26 @@
-* {
-    background-color: rgb(209, 207, 207);
+.song-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    margin: auto;
+    background-color: rgba(128, 128, 128, 0.74);
 }
 
 .song-card {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
 }
 
 
 img {
     border-radius: 50%;
-    width: 150px;
+    width: 100px;
 }
 
 body {
     text-align: center; 
+    background-color: rgba(128, 128, 128, 0.274);
 }
 
 .track-title {
