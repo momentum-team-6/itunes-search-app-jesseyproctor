@@ -39,7 +39,6 @@ function renderResults (data) {
 function renderSong (track) {
  
     const bandImage = document.createElement('figure')
-    bandImage.classList.add('band-image')
     songCard.appendChild(bandImage)
 
     const bandName = document.createElement('h3')
@@ -50,7 +49,10 @@ function renderSong (track) {
     songCard.appendChild(trackTitle)
 
     const trackSoundClip = document.createElement('figure')
-    songCard.appendChild(trackSoundClip)
+    songCard.appendChild(trackSoundClip) 
+
+    // const break = document.createElement('br')
+    // songCard.appendChild(break)
 
 
     bandImage.innerHTML = `<img class='band photo' src=${track.artworkUrl30}>`
